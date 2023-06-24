@@ -8,13 +8,13 @@
     <title>Accounting</title>
 </head>
 <body>
-    <!-- <iframe src="dashboard.html" frameborder="0" width="100%" height="50"></iframe> -->
+    <iframe src="dashboard.html" frameborder="0" width="100%" height="50"></iframe>
 
     <div class="container">
         <div class="row">
           <div class="col-md-3 custom-border">
             <div class="transButton">
-              <button type="button"  data-frame="add-account-frame"  class="btn btn-link">Add Accounts</button>
+              <button type="button"  data-frame="add-account-frame"  class="btn btn-link">Add CHART OF Accounts</button>
               <button type="button" id="active-account" data-frame="active-account-frame"  class="btn btn-link">Active Accounts</button>
             </div>
           </div>
@@ -22,18 +22,18 @@
             <main id="main-section">
               <div id="add-account-frame" style="display: none;">
                 <!-- Account List Content -->
-                <h1>ADD ACCOUNT</h1>
+                <h1>ADD CHART OF ACCOUNT</h1>
                 <div class="row g-2">
                   <div class="col-md">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="branch">
-                      <label for="floatingInputGrid" style="font-size: 15px;">Branch</label>
+                      <label for="floatingInputGrid" style="font-size: 15px;">ACCOUNT CODE</label>
                     </div>
                   </div>
                   <div class="col-md">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="account_type">
-                      <label for="floatingInputGrid" style="font-size: 15px;" >Account Type</label>
+                      <label for="floatingInputGrid" style="font-size: 15px;" >Account</label>
 
                       
                     </div>
@@ -142,6 +142,22 @@
             });
 
     </script>
+
+
+<script>
+  function openSlideMenu(){
+      document.getElementById('side-menu').style.width = '300px';
+      document.getElementById('main').style.marginLeft = '250px';
+      
+  }
+
+  function closeSideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+      document.getElementById('main').style.marginLeft = '0';
+      // window.location.assign("/dashboard.html/")
+
+  }
+</script>
 
     
 </body>
