@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Accounting</title>
+</head>
+<body>
+    <!-- <iframe src="dashboard.html" frameborder="0" width="100%" height="50"></iframe> -->
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3 custom-border">
+            <div class="transButton">
+              <button type="button"  data-frame="add-account-frame"  class="btn btn-link">Add Accounts</button>
+              <button type="button" id="active-account" data-frame="active-account-frame"  class="btn btn-link">Active Accounts</button>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <main id="main-section">
+              <div id="add-account-frame" style="display: none;">
+                <!-- Account List Content -->
+                <h1>ADD ACCOUNT</h1>
+                <div class="row g-2">
+                  <div class="col-md">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="branch">
+                      <label for="floatingInputGrid" style="font-size: 15px;">Branch</label>
+                    </div>
+                  </div>
+                  <div class="col-md">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="account_type">
+                      <label for="floatingInputGrid" style="font-size: 15px;" >Account Type</label>
+
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+
+
+                <div class="row g-2">
+                  <div class="col-md">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="personal_info">
+                      <label for="floatingInputGrid" style="font-size: 15px;">Personal Info</label>
+                    </div>
+                  </div>
+                  <div class="col-md">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="account_name">
+                      <label for="floatingInputGrid" style="font-size: 15px;">Account Name</label>
+
+                     
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+              
+
+                
+
+
+               
+
+              <div id="active-account-frame" style="display: none;">
+                <!-- Active Accounts Content -->
+                <div class="container">
+                  <input 
+                        type="text"
+                        name="autoSearch_account"
+                        id="autoSearch_account"
+                        placeholder="Account Number / Account Name"
+                        class="input-box"
+                        
+                   >
+                </div>
+                <div class="container -mt4">
+                   <div class="modal-header">
+                    <button type="button" id="SearchActive" class="btn btn-primary" style="display: none;"
+                    >Search</button>
+                    </div>
+                
+                  <table id="myTable3" class="table table-bordered" style="text-align: center;">
+                    
+                    <thead class="table-dark">
+                      <tr>
+                        <td>ID</td>
+                        <td>Account Number</td>
+                        <td>Account Name</td>
+                      </tr>
+                    </thead>
+                    <tbody id="table_body_test">
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div id="dormant-account-frame" style="display: none;">
+                <!-- Dormant Accounts Content -->
+                <h1>I am Yours</h1>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+   
+    
+
+    <script>
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const buttons = document.querySelectorAll("[data-frame]");
+                const mainSection = document.getElementById("main-section");
+
+                buttons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    const frameId = button.getAttribute("data-frame");
+                    const frames = document.querySelectorAll("#main-section > div");
+
+                    frames.forEach(function(frame) {
+                    frame.style.display = frame.id === frameId ? "block" : "none";
+                    });
+                });
+                });
+            });
+
+    </script>
+
+    
+</body>
+</html>
